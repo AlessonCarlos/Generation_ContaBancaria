@@ -1,10 +1,12 @@
 import readlinesync = require("readline-sync");
+import { colors } from './src/util/Colors';
 
 export function main() {
     let opcao: number;
 
     while (true) {
-        console.log("*****************************************************");
+        
+        console.log(colors.bg.black, colors.fg.yellow,                                                                                                                                  "***************************************************");
         console.log("                                                     ");
         console.log("                BANCO DO BRAZIL COM Z                ");
         console.log("                                                     ");
@@ -21,67 +23,88 @@ export function main() {
         console.log("            9 - Sair                                 ");
         console.log("                                                     ");
         console.log("*****************************************************");
-        console.log("                                                     ");
+        console.log("                                                     ",
+            colors.reset
+        );
 
         console.log("Entre com a opcao desejada: ");
         opcao = readlinesync.questionInt("");
         console.log('Voce digitou: ', opcao);
 
         if (opcao == 9) {
-            console.log("Banco do Brazil com Z - O seu Futuro começa aqui!");
+            console.log(colors.fg.greenstrong,
+                "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
             sobre();
             console.log("O Banco com Z - Agradeço a sua visita!");
+            console.log(colors.reset, "")
             process.exit(0);
         }
 
         // CONVERSÃO PARA SWITCH CASE
         switch (opcao) {
             case 1:
-                console.log("Bem vindo ao sistema do Brazil com Z - Vamos criar sua conta: ");
+                console.log(colors.fg.whitestrong,
+                    "\n\ncriar conta:\n\n ");
+                KeyPress()
                 break;
                 
             case 2:
-                console.log("Bem vindo ao sistema do Brazil com Z!");
-                console.log("Listando todas as contas");
+                
+                console.log(colors.fg.whitestrong,
+                    "\n\nListando todas as contas\n\n");
+                KeyPress()
                 break;
                 
             case 3:
-                console.log("Bem vindo ao sistema do Brazil com Z!");
-                console.log("Buscar conta por numero de conta");
+                
+                console.log(colors.fg.whitestrong,
+                    "\n\nBuscar conta por numero de conta\n\n");
+                KeyPress()
                 break;
                 
             case 4:
-                console.log("Bem vindo ao sistema do Brazil com Z!");
-                console.log("Vamos atualizar seus dados");
+            
+                console.log(colors.fg.whitestrong,
+                    "\n\nVamos atualizar os dados da conta\n\n");
+                KeyPress()
                 break;
                 
             case 5:
-                console.log("Bem vindo ao sistema do Brazil com Z!");
-                console.log("Uma pena que voce esteja nos deixando");
-                console.log("Vamos prosseguir com o encerramento da sua conta!");
+                
+                console.log(colors.fg.whitestrong,
+                    "\n\nApagar Conta\n\n");
+                KeyPress()
                 break;
                 
             case 6:
-                console.log("Bem vindo ao sistema do Brazil com Z!");
-                console.log("Entrando no sistema de saque...");
+                
+                console.log(colors.fg.whitestrong,
+                    "\n\nSaque...\n\n");
+                KeyPress()
                 break;
                 
             case 7:
-                console.log("Bem vindo ao sistema do Brazil com Z!");
-                console.log("Entrando no sistema de depositos...");
+                
+                console.log(colors.fg.whitestrong,
+                    "\n\nRealizar deposito...\n\n");
+                KeyPress()
                 break;
                 
             case 8:
-                console.log("Bem vindo ao sistema do Brazil com Z!");
-                console.log("Entrando no sistema de transferencia bancaria");
+                
+                console.log(colors.fg.whitestrong,
+                    "\n\nTransferencia Bancaria\n\n");
+                KeyPress()
                 break;
                 
             default:
-                console.log("Opção Inválida! Por favor, escolha uma opção entre 1 e 9.");
+                console.log("\nOpção Inválida! Por favor, escolha uma opção entre 1 e 9.\n");
                 break;
         }
     }
 }
+
+
 
 export function sobre(): void {
     console.log("*****************************************************");
@@ -89,6 +112,12 @@ export function sobre(): void {
     console.log("Generation Brasil - alessonm@genstudents.org");
     console.log("https://github.com/AlessonCarlos/Generation_ContaBancaria");
     console.log("*****************************************************");
+}
+
+function KeyPress(): void {
+    console.log(colors.reset, "");
+    console.log("\nPressione enter para continuar...")
+    readlinesync.prompt();
 }
 
 main();
