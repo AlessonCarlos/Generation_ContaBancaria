@@ -85,9 +85,9 @@ export function main() {
 
 export function sobre(): void {
     console.log("*****************************************************");
-    console.log("Projeto Desenvolvido por: ");
-    console.log("Generation Brasil - generation@generation.org");
-    console.log("github.com/conteudoGeneration");
+    console.log("Projeto Desenvolvido por:Alesson Carlos do Nascimento Melo ");
+    console.log("Generation Brasil - alessonm@genstudents.org");
+    console.log("https://github.com/AlessonCarlos/Generation_ContaBancaria");
     console.log("*****************************************************");
 }
 
