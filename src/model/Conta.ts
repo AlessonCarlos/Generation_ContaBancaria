@@ -1,4 +1,4 @@
-export class Conta {
+export abstract class Conta {
 
     // Atributos
     private _numero: number;
@@ -35,6 +35,11 @@ export class Conta {
 
     public get tipo() {
         return this._tipo;
+    }
+
+    public set tipo(tipo: number) {
+        
+        this._tipo = tipo;
     }
 
     public get titular() {
